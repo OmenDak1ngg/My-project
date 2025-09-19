@@ -50,6 +50,9 @@ public class PipeSpawner : MonoBehaviour
 
     private void ReleasePipe(Pipe pipe)
     {
+        if (_activeObjects.Contains(pipe) == false)
+            return;
+
         _pool.Release(pipe);
         _activeObjects.Remove(pipe);
     }
